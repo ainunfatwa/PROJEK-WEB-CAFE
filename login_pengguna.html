@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrasi</title>
+    <link rel="stylesheet" type="text/css" href="registrasi.css">
+    <link rel="stylesheet" type="text/css" href="index.html">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">   
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fugaz+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <form id="Registra-Online" style="display: none;" ></form>
+        <div class="btn-regis" id="enter_your_order">
+            <a href="#pesanan" class="btn-ad">Masukkan Pesanan Anda</a>
+            <fieldset>
+                <div>
+                    <label for="nama">Nama:</label></form>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div>  
+                    <label for="tanggal_reservasi">tanggal_reservasi:</label>
+                    <input type="date" id="tanggal_reservasi" name="tanggal_reservasi" required>
+                </div>
+                <div>
+                    <label for="waktu">Waktu:</label>
+                    <input type="time" id="waktu" name="waktu" required>
+                </div>
+                <div>
+                    <label for="jumlah">Jumlah Orang:</label>
+                    <input type="number" id="jumlah" name="jumlah" min="1" required>
+                </div>
+                    <label for="pesan">Pesan Tambahan:</label>
+                    <textarea id="pesan" name="pesan" rows="4"></textarea>
+                <div>
+                    <button type="submit">Pesan Sekarang</button>
+                    <button type="reset" name="reset"><i class="fas fa-times"></i> BATAL</button>
+                </div>
+            </fieldset>
+        <script>
+        // Tampilkan kembali tabel saat tombol "Batal" ditekan
+        $('button[type="reset"]').click(function() {
+          $('#pesanan').hide();
+          $('#button').show();
+        });
+        </script>
+</body>
+</html>
