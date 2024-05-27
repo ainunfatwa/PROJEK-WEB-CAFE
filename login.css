@@ -1,104 +1,60 @@
-/* Reset dasar untuk menghilangkan padding dan margin default */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<?php
+session_start();
+include "koneksi.php";
+
+if(isset($_SESSION['user'])){
+    header("Location: tampilan.php");
+    exit;
 }
 
-/* Atur latar belakang dan teks dasar untuk seluruh body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
 
-/* Container utama untuk halaman login */
-.container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 800px;
-    max-width: 100%;
-    display: flex;
-}
+    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
 
-/* Style untuk kontainer kiri (form login) */
-.left-container {
-    padding: 30px;
-    width: 50%;
-}
-
-/* Style untuk kontainer kanan (informasi tambahan) */
-.right-container {
-    background-color: #f1c40f;
-    color: #fff;
-    padding: 30px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Heading style */
-h2 {
-    margin-bottom: 20px;
-}
-
-/* Style untuk input form login */
-.form-login {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Style untuk tombol sign-in */
-#sign-in {
-    width: 100%;
-    padding: 15px;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#sign-in:hover {
-    background-color: #2980b9;
-}
-
-/* Style untuk tombol sign-up */
-#sign-up {
-    padding: 10px 20px;
-    background-color: #e74c3c;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#sign-up:hover {
-    background-color: #c0392b;
-}
-
-/* Responsif untuk layar yang lebih kecil */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .left-container, .right-container {
-        width: 100%;
+    if(mysqli_num_rows($query) > 0){
+        $data = mysqli_fetch_array($query);
+        $_SESSION['user'] = $data;
+        header("Location: tampilan.php"); 
+        exit; 
+    } else {
+        echo '<script>alert("Username atau Password Salah.");</script>';
     }
 }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Ke Web Reservasi Cafe ITH</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <h3>Login</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-user"></i></td>
+                <td><input type="text" name="username" placeholder="Username"></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-lock"></i></td>
+                <td><input type="password" name="password" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" name="login">Login</button>
+                    <a href="registrasi.php">Registrasi</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
