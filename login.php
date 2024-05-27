@@ -1,35 +1,59 @@
 <?php
-    // koneksi ke database
-     $username = "root";
-     $password = "";
-     $dbname = "project_web2";
-     $conn = new mysqli($servername, $username, $password, $dbname);
-         if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-         }
-     $email = $_POST['email'];
-     $password = $_POST['password'];
-    // mengecek apakah email dan password cocok
-     $result = $conn->query("SELECT * FROM mahasiswa WHERE email='$email' AND 
-            password='$password'");
-     if ($result->num_rows == 0) {
-    // mengecek apakah email terdaftar
-     $check_email = $conn->query("SELECT * FROM mahasiswa WHERE email='$email'");
-     if ($check_email->num_rows == 0) {
-     echo "Password tidak cocok";
+session_start();
+include "koneksi.php";
+
+if(isset($_SESSION['user'])){
+    header("Location: tampilan.php");
+    exit;
+}
+
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+
+    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
+
+    if(mysqli_num_rows($query) > 0){
+        $data = mysqli_fetch_array($query);
+        $_SESSION['user'] = $data;
+        header("Location: tampilan.php"); 
+        exit; 
     } else {
-     echo "Akun tidak terdaftar";
+        echo '<script>alert("Username atau Password Salah.");</script>';
     }
-    } else {
-    // memulai sesi
-     session_start();
-     while ($row = $result->fetch_assoc()) {
-     // mengatur variabel sesi
-     $_SESSION['username'] = $row['username'];
-     $_SESSION['email'] = $row['email'];
-     $_SESSION['password'] = $row['password'];
-     }
-     header('Location: beranda.php');
-     }
+}
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Ke Web Reservasi Cafe ITH</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td colspan="2" align="center">
+                    <h3>Login User</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" name="login">Login</button>
+                    <a href="registrasi.php">Registrasi</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
