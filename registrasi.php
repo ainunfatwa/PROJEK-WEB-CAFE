@@ -8,6 +8,7 @@ include "koneksi.php";
 <head>
     <title>Login Ke Web Reservasi Cafe ITH</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -34,16 +35,16 @@ include "koneksi.php";
                 </td>
             </tr>
             <tr>
-                <td>Nama</td>
-                <td><input type="text" name="nama" required></td>
+                <td class="input-icon"><i class="fas fa-user-circle"></i></td>
+                <td><input type="text" name="name" placeholder="Name"></td>
             </tr>
             <tr>
-                <td>Username</td>
-                <td><input type="text" name="username" required></td>
+                <td class="input-icon"><i class="fas fa-user"></i></td>
+                <td><input type="text" name="username" placeholder="Username"></td>
             </tr>
             <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" required></td>
+                <td class="input-icon"><i class="fas fa-lock"></i></td>
+                <td><input type="text" name="password" placeholder="Password"></td>
             </tr>
             <tr>
                 <td></td>
