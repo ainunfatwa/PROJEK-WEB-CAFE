@@ -1,19 +1,16 @@
 <?php
 session_start();
-if ($_SESSION['status']=="login"){
+session_destroy();
 ?>
-<!DOCTYPEC html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Logout</title>
+    <script type="text/javascript">
+        alert('Selamat, anda berhasil logout.');
+        location.href = 'login.php';
+    </script>
 </head>
 <body>
-<p><a href="logout.php">Keluar</a></p>
-<h2>SELAMAT DATANG, LOGIN ANDA BERHASIL</h2>
 </body>
 </html>
-<?php
-{ else }
-echo "maaf anda belum login";
-}
-?>
