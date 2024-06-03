@@ -48,3 +48,20 @@
     color: #ffffff; 
     font-size: 14px; 
 }
+
+.quantity-box {
+    display: flex; 
+    align-items: center; 
+}
+
+.quantity-box input[type="number"] {
+    width: 40px; 
+    padding: 5px;
+    border: 1px solid #721b1b93;
+    border-radius: 5px;
+    margin-right: 5px; 
+}
+
+.quantity-box .btn {
+    margin: 0; 
+}
