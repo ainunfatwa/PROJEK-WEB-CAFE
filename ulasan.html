@@ -3,36 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrasi</title>
+    <title>Registrasi</title>
     <link rel="stylesheet" type="text/css" href="form2.css">
     <link rel="stylesheet" type="text/css" href="form.css">
     <link rel="stylesheet" type="text/css" href="index.html">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">   
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fugaz+One&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+	body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
 
+.background-images {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background-images img {
+    width: 20%; /* Mengatur ukuran gambar menjadi lebih kecil */
+    height: auto; /* Mempertahankan aspek rasio gambar */
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.background-images .left {
+    position: absolute;
+    left: 10%;
+}
+
+.background-images .right {
+    position: absolute;
+    right: 10%;
+}
+
+.wrapper {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+h3 {
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rating .star {
+    font-size: 24px;
+    color: #ccc; /* Default color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating .star.selected,
+.rating .star:hover,
+.rating .star:hover ~ .star {
+    color: #ffdd57; /* Selected color */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.submit {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn.submit:hover {
+    background-color: #218838;
+}
+
+.btn.cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn.cancel:hover {
+    background-color: #c82333;
+}
+
+.results {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.result-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.result-item p {
+    margin: 0;
+}
+
+</style>
 </head>
 <body>
+    <div class="background-images">
+        <img src="image/rat1.jpg" alt="Rat 1" class="left">
+        <img src="image/rat2.jpg" alt="Rat 2" class="right">
+    </div>
     <div class="wrapper">
-		<h3>Enter your rating on this café</h3>
-		<form action="#">
-			<div class="rating">
-				<input type="number" name="rating" hidden>
-				<i class='bx bx-star star' style="--i: 0;"></i>
-				<i class='bx bx-star star' style="--i: 1;"></i>
-				<i class='bx bx-star star' style="--i: 2;"></i>
-				<i class='bx bx-star star' style="--i: 3;"></i>
-				<i class='bx bx-star star' style="--i: 4;"></i>
-			</div>
-			<textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
-			<div class="btn-group">
-				<button type="submit" class="btn submit">Submit</button>
-				<button class="btn cancel">Cancel</button>
-			</div>
-		</form>
-	</div>
-  
+        <h3>Enter your rating on this café</h3>
+        <form id="ratingForm">
+            <div class="rating">
+                <input type="number" name="rating" hidden>
+                <i class='bx bx-star star' style="--i: 0;"></i>
+                <i class='bx bx-star star' style="--i: 1;"></i>
+                <i class='bx bx-star star' style="--i: 2;"></i>
+                <i class='bx bx-star star' style="--i: 3;"></i>
+                <i class='bx bx-star star' style="--i: 4;"></i>
+            </div>
+            <textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
+            <div class="btn-group">
+                <button type="submit" class="btn submit">Submit</button>
+                <button type="button" class="btn cancel">Cancel</button>
+            </div>
+        </form>
+        <div class="results" id="results">
+            <h4>Your Submitted Ratings</h4>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const stars = document.querySelectorAll('.star');
+            const ratingInput = document.querySelector('input[name="rating"]');
+            const form = document.getElementById('ratingForm');
+            const resultsContainer = document.getElementById('results');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    ratingInput.value = index + 1;
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('selected');
+                        } else {
+                            s.classList.remove('selected');
+                        }
+                    });
+                });
+
+                star.addEventListener('mouseover', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('hover');
+                        } else {
+                            s.classList.remove('hover');
+                        }
+                    });
+                });
+
+                star.addEventListener('mouseout', () => {
+                    stars.forEach((s) => {
+                        s.classList.remove('hover');
+                    });
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const rating = ratingInput.value;
+                const opinion = form.querySelector('textarea[name="opinion"]').value;
+
+                if (rating && opinion) {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('result-item');
+                    resultItem.innerHTML = `
+                        <p><strong>Rating:</strong> ${rating} / 5</p>
+                        <p><strong>Opinion:</strong> ${opinion}</p>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                    form.reset();
+                    stars.forEach(star => star.classList.remove('selected'));
+                    ratingInput.value = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
