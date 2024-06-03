@@ -1,0 +1,50 @@
+.food, .drink {
+    display: block; 
+}
+.food-container, .drink-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.food-item, .drink-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.food-item img, .drink-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.caption-box {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.item-caption {
+    font-size: 1em;
+    font-weight: bold;
+}
+.item-price {
+    font-size: 0.9em;
+    color: #666;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 5px; 
+    padding: 2px 8px; 
+    background-color: #702117ec; 
+    color: #ffffff; 
+    font-size: 14px; 
+}
