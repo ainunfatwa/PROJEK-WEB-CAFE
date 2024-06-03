@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservasi Cafe</title>
     <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" type="text/css" href="menu.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
@@ -13,130 +14,162 @@
     <script src="dataregist.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <style>
-        .food, .drink {
-            display: block; /* Pastikan section ditampilkan */
-        }
-        .food-container, .drink-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .food-item, .drink-item {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .food-item img, .drink-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .caption-box {
-            margin-top: 10px;
-            padding: 5px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
-        .item-caption {
-            font-size: 1em;
-            font-weight: bold;
-        }
-        .item-price {
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
 </head>
 <body>
     <section class="food" id="food-section">
         <div class="food-container">
             <div class="food-item">
-                <img src="image/bakso.jpg" alt="Food 1">
+                <img src="image/bakso.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Mie Goreng</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/chicken katsu.jpg" alt="Food 2">
+                <img src="image/chicken katsu.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Chicken Katsu</div>
                     <div class="item-price">Rp 22.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/spaghetti.jpg" alt="Food 3">
+                <img src="image/spaghetti.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Spaghetti</div>
                     <div class="item-price">Rp 25.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/nasi goreng.jpeg" alt="Food 4">
+                <img src="image/nasi goreng.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Nasi Goreng</div>
                     <div class="item-price">Rp 25.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/ayam geprek.jpeg" alt="Food 5">
+                <img src="image/ayam geprek.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Ayam Geprek</div>
                     <div class="item-price">Rp 22.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/mie goreng.jpg" alt="Food 5">
+                <img src="image/mie goreng.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Mie Goreng</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/rice bowl chicken.jpg" alt="Food 5">
+                <img src="image/rice bowl chicken.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Rice Bowl Chicken</div>
                     <div class="item-price">Rp 15.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/burger.jpg" alt="Food 5">
+                <img src="image/burger.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Burger</div>
                     <div class="item-price">Rp 15.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/kentang.jpg" alt="Food 5">
+                <img src="image/kentang.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Kentang</div>
                     <div class="item-price">Rp 15.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/donat.jpeg" alt="Food 5">
+                <img src="image/donat.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Donat</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/pisang nugget.jpg" alt="Food 5">
+                <img src="image/pisang nugget.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Pisang Nugget</div>
                     <div class="item-price">Rp 15.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="food-item">
-                <img src="image/banana roll.jpg" alt="Food 5">
+                <img src="image/banana roll.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Banana Roll</div>
                     <div class="item-price">Rp 15.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="image/sosis bakar.jpeg">
+                <div class="caption-box">
+                    <div class="item-caption">Sosis Bakar</div>
+                    <div class="item-price">Rp 8.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="image/dimsum ayam.jpeg">
+                <div class="caption-box">
+                    <div class="item-caption">Dimsum Ayam</div>
+                    <div class="item-price">Rp 20.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
                 </div>
             </div>
             </div>
@@ -145,87 +178,157 @@
     <section class="drink" id="drink-section">
         <div class="drink-container">
             <div class="drink-item">
-                <img src="image/greentea.jpeg" alt="Drink 1">
+                <img src="image/greentea.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Green Tea</div>
                     <div class="item-price">Rp 18.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/thai tea.jpeg" alt="Drink 2">
+                <img src="image/thai tea.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Thai Tea</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/lemon tea.jpeg" alt="Drink 3">
+                <img src="image/lemon tea.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Lemon Tea</div>
                     <div class="item-price">Rp 15.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/cappucino.jpeg" alt="Drink 4">
+                <img src="image/cappucino.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Cappuccino</div>
                     <div class="item-price">Rp 25.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/chocolate.jpeg" alt="Drink 5">
+                <img src="image/chocolate.jpeg">
                 <div class="caption-box">
                     <div class="item-caption">Chocolate</div>
                     <div class="item-price">Rp 22.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/jus alpukat.jpg" alt="Drink 5">
+                <img src="image/jus alpukat.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Jus Alpukat</div>
                     <div class="item-price">Rp 18.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/dalgona coffe.jpg" alt="Drink 5">
+                <img src="image/dalgona coffe.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Dalgona Coffe</div>
                     <div class="item-price">Rp 22.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/nutella.jpg" alt="Drink 5">
+                <img src="image/nutella.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Nutella</div>
                     <div class="item-price">Rp 18.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/milk shake oreo.jpg" alt="Drink 5">
+                <img src="image/milk shake oreo.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Milk Shake Oreo</div>
                     <div class="item-price">Rp 18.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/caramel latte.jpg" alt="Drink 5">
+                <img src="image/caramel latte.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Caramel Latte</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/hazelnut latte.jpg" alt="Drink 5">
+                <img src="image/hazelnut latte.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Hazelnut Latte</div>
                     <div class="item-price">Rp 20.000</div>
                 </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
             </div>
             <div class="drink-item">
-                <img src="image/milk tea.jpg" alt="Drink 5">
+                <img src="image/milk tea.jpg">
                 <div class="caption-box">
                     <div class="item-caption">Milk Tea</div>
                     <div class="item-price">Rp 15.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
+            </div>
+            <div class="drink-item">
+                <img src="image/smoothies strawberry.jpeg">
+                <div class="caption-box">
+                    <div class="item-caption">Smoothies Strawberry</div>
+                    <div class="item-price">Rp 15.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
+                </div>
+            </div>
+            <div class="drink-item">
+                <img src="image/smoothies mangga.jpeg">
+                <div class="caption-box">
+                    <div class="item-caption">Smoothies Mangga</div>
+                    <div class="item-price">Rp 15.000</div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn waves-effect waves-light"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                    <button class="btn green waves-effect waves-light"><i class="fas fa-credit-card"></i> Pesan Sekarang</button>
                 </div>
             </div>
         </div>
