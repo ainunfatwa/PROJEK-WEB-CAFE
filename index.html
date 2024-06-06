@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Cafe</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="dataregist.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Reservasi Online Cafe ITH</a>
+        <ul class="navbar">
+            <li><a href="#home" id="home-link">Home</a></li>
+            <li><a href="#about" id="about-link">About</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Menu</a>
+                <div class="dropdown-content">
+                    <a href="#food" id="food-link">Food</a>
+                    <a href="#drink" id="drink-link">Drink</a>
+                </div>
+            </li>
+            <li><a href="#" id="contact-link">Contact</a></li>
+        </ul>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Cafe Mahasiswa</h1>
+            <h2>tell us your favorite menu at our cafe</h2>
+            <h3>OPEN</h3>
+            <h3>Monday-Sunday / 08.00 - 17.00 </h3>
+            <a href="registrasi.html" class="btn">Enter Your Order</a>
+            <a href="ulasan.html" class="btn-p">Penilaian & ulasan</a>
+        </div>
+    </section>
+    <!-- Remaining content -->
+    <script>
+        // Existing JavaScript code for handling navigation and other functionality
+    </script>
+</body>
+</html>
